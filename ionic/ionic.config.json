@@ -1,0 +1,7 @@
+{
+  "name": "laundry-oasis-ionic",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

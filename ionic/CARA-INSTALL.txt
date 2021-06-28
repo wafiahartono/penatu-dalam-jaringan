@@ -1,0 +1,2 @@
+Pertama kali jalankan perintah berikut:
+1. npm i

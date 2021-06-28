@@ -1,0 +1,33 @@
+<ion-content class="ion-padding">
+  <ion-button class="back-button" color="dark" fill="clear" shape="round" (click)="keluar()">
+    <ion-icon name="arrow-round-back" slot="icon-only"></ion-icon>
+  </ion-button>
+  <ion-refresher slot="fixed" (ionRefresh)="getData($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div class="sapaan">Selamat {{ getSapaan() }},<br>{{ namaPelanggan | async }}!</div>
+  <div class="header">Pesanan kamu</div>
+  <ion-spinner class="spinner-full-width" *ngIf="loading"></ion-spinner>
+  <ion-card class="pesan pesan--card" *ngIf="pesan">{{ pesan }}</ion-card>
+  <ion-card button class="transaksi" *ngFor="let transaksi of daftarTransaksi | async; let i = index" [routerLink]="['/detail-transaksi', transaksi.id]">
+    <div class="transaksi__id">{{ transaksi.id }} - {{ transaksi.created_at | date:'dd/MM/y HH:mm' }}</div>
+    <div class="transaksi__status" [ngClass]="transaksi.tanggal_selesai ? 'transaksi__status--selesai' : transaksi.tanggal_masuk ? 'transaksi__status--proses' : ''">{{ getJudul(transaksi.tanggal_masuk, transaksi.tanggal_selesai) }}</div>
+    <div class="transaksi__deskripsi">{{ getDeskripsi(transaksi.antar, transaksi.tanggal_jadi, transaksi.tanggal_selesai) }}</div>
+    <div class="transaksi__total-biaya">{{ mataUang(transaksi.total_biaya) }}</div>
+    <div class="chip-container" *ngIf="transaksi.antar || transaksi.ekspres">
+      <ion-chip outline *ngIf="transaksi.antar">
+        <ion-label>Antar</ion-label>
+        <ion-icon color="primary" name="car"></ion-icon>
+      </ion-chip>
+      <ion-chip outline *ngIf="transaksi.ekspres">
+        <ion-label>Ekspres</ion-label>
+        <ion-icon color="primary" name="flash"></ion-icon>
+      </ion-chip>
+    </div>
+  </ion-card>
+  <ion-fab horizontal="center" slot="fixed" vertical="bottom">
+    <ion-fab-button routerLink="/buat-transaksi">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

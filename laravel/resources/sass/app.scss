@@ -1,0 +1,141 @@
+@import './simple-data-table';
+
+body {
+    margin: 0 auto;
+    width: 80vw;
+}
+
+#h3-api-otentikasi-status-token::before {
+    content: 'Token: '
+}
+
+#h3-notifikasi-pesanan::after {
+    content: '.';
+}
+
+#h3-notifikasi-pesanan::before {
+    content: 'Notifikasi: ';
+}
+
+.form {
+    border: 1px solid black;
+    box-sizing: border-box;
+    margin: 0 auto 1rem;
+    padding: 0.5rem;
+    width: 100%;
+
+    &>*:not(label),
+    &>label>* {
+        box-sizing: border-box;
+        margin: 0 0 0.5rem;
+        width: 100%;
+    }
+
+    &>*:not(label):last-child {
+        margin-bottom: 0;
+    }
+
+    p {
+        margin: 0;
+    }
+}
+
+.buat-transaksi {
+    &__paket::before {
+        content: 'Paket: '
+    }
+
+    &__pesan::before {
+        content: 'Pesan: '
+    }
+
+    &__total-biaya-container {
+        display: block;
+        margin-bottom: 1rem;
+
+        >* {
+            display: inline;
+        }
+    }
+}
+
+.detail-transaksi {
+    &__id-transaksi {
+        text-align: left;
+    }
+
+    &__id-transaksi::before {
+        content: 'ID Transaksi #';
+    }
+
+    &__row>* {
+        text-align: center;
+    }
+
+    &__selesai::before {
+        content: 'Transaksi selesai ';
+    }
+
+    &__tanggal-pesan {
+        text-align: right;
+    }
+
+    &__tanggal-pesan::before {
+        content: 'Tanggal Pesan';
+        float: left;
+    }
+
+    table {
+        border: 1px solid;
+        margin-bottom: 1rem;
+        width: 100%;
+
+        p {
+            margin: 0;
+        }
+
+        td,
+        th {
+            border: 1px solid;
+            padding: 0.125rem 0.25rem;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+    }
+}
+
+.mata-uang {
+    text-align: right;
+}
+
+.mata-uang::before {
+    content: 'Rp';
+    float: left;
+}
+
+.pesan::before {
+    content: 'Pesan: '
+}
+
+.tac {
+    text-align: center;
+}
+
+.tal {
+    text-align: left;
+}
+
+.tar {
+    text-align: right;
+}
+
+#menu-container {
+    margin: 1rem 0;
+    display: flex;
+
+    button:not(:first-child) {
+        margin-left: 0.25rem;
+    }
+}

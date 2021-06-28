@@ -1,0 +1,17 @@
+<ion-content class="ion-padding">
+  <div>
+    <div class="sapaan">Selamat datang</div>
+    <form class="form" (ngSubmit)="masuk()">
+      <ion-item>
+        <ion-label position="floating">Username</ion-label>
+        <ion-input [(ngModel)]="credential.username" name="username" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input [(ngModel)]="credential.password" name="password" type="password"></ion-input>
+      </ion-item>
+      <ion-button expand="block" type="submit">Masuk</ion-button>
+    </form>
+    <ion-button class="daftar" color="medium" fill="clear" type="button" (click)="daftar()">Belum punya akun? Daftar di sini</ion-button>
+  </div>
+</ion-content>

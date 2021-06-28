@@ -1,0 +1,9 @@
+ion-content>*:nth-last-child(2) {
+    margin-bottom: 4rem;
+}
+
+.header {
+    color: var(--ion-color-primary-shade);
+    font-weight: 600;
+    margin-top: 2rem;
+}

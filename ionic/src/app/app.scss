@@ -1,0 +1,233 @@
+:root {
+    --ion-font-family: "Roboto", "Helvetica Neue", sans-serif;
+}
+
+ion-content>*:not(:first-child):not(ion-fab) {
+    margin: 1rem 0 0;
+}
+
+.back-button {
+    --padding-start: 0;
+    --padding-end: 0;
+    margin: 0;
+    width: 3rem;
+}
+
+.chip-container {
+    ion-chip {
+        margin: 0;
+
+        &:not(:first-child) {
+            margin-left: 0.5rem;
+        }
+
+        ion-label {
+            font-weight: 500;
+        }
+    }
+}
+
+.detail-transaksi {
+    border-bottom: 1px solid var(--ion-color-light-shade);
+    margin-top: 0.75rem;
+    padding-bottom: 0.5rem;
+
+    &:first-child {
+        margin-top: 1rem;
+    }
+
+    &__deskripsi-paket {
+        color: var(--ion-color-dark-shade);
+        margin-top: 0.25rem;
+    }
+
+    &__harga {
+        color: var(--ion-color-dark);
+        font-weight: 500;
+        margin-top: 0.5rem;
+
+        &>* {
+            display: inline-block;
+        }
+
+        &>*:nth-child(1) {
+            width: 60%;
+        }
+
+        &>*:nth-child(2) {
+            width: 12.5%;
+
+            &::before {
+                content: 'x ';
+            }
+        }
+
+        &>*:nth-child(3) {
+            float: right;
+
+            &::before {
+                content: 'Rp';
+                margin-right: 0.25rem;
+            }
+        }
+    }
+
+    &__id-paket {
+        color: var(--ion-color-primary-shade);
+        font-size: medium;
+        font-weight: 700;
+    }
+
+    &__jumlah {
+        font-size: large;
+        font-weight: 500;
+        margin: 0 0.5rem;
+    }
+
+    &__jumlah-container {
+        align-items: center;
+        display: flex;
+    }
+
+    &--editable {
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        ion-button {
+            margin: 0;
+            --padding-start: 0;
+            --padding-end: 0;
+            height: 1.5rem;
+            width: 1.5rem;
+        }
+
+        &>*:first-child {
+            align-items: center;
+            display: flex;
+
+            &>*:first-child {
+                width: 100%;
+            }
+
+            &>*:not(:first-child) {
+                margin-left: 0.5rem;
+            }
+        }
+    }
+}
+
+.infinite-loading {
+    margin: 0;
+}
+
+.pesan {
+    font-size: large;
+    font-weight: 300;
+    text-align: center;
+
+    &--card {
+        padding: 1rem;
+    }
+}
+
+.sapaan {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-top: 1rem;
+}
+
+.spinner-full-width {
+    width: 100%;
+}
+
+.transaksi {
+    padding: 1rem;
+
+    &__deskripsi {
+        color: var(--ion-color-dark);
+        margin-top: 1rem;
+    }
+
+    &__id {
+        color: var(--ion-color-medium-shade);
+        font-weight: 500;
+
+        &::before {
+            content: 'Pesanan #'
+        }
+    }
+
+    &__status {
+        color: var(--ion-color-medium-shade);
+        font-size: x-large;
+        font-weight: 800;
+        margin-top: 0.5rem;
+
+        &--proses {
+            color: var(--ion-color-dark-shade)
+        }
+
+        &--selesai {
+            color: var(--ion-color-primary-shade)
+        }
+    }
+
+    &__total-biaya {
+        color: var(--ion-color-primary-shade);
+        font-size: large;
+        font-weight: 500;
+        margin-top: 0.5rem;
+
+        &::before {
+            content: 'Rp';
+            margin-right: 0.25rem;
+        }
+    }
+
+    &__biaya--detail {
+        color: var(--ion-color-medium-shade);
+        font-weight: 500;
+        margin-top: 0.5rem;
+
+        &>*:not(:first-child) {
+            margin-top: 0.25rem;
+        }
+
+        &>*>*:first-child {
+            float: right;
+
+            &::before {
+                content: 'Rp';
+                margin-right: 0.25rem;
+            }
+        }
+
+        .transaksi__sub-total::before {
+            content: 'Sub total'
+        }
+
+        .transaksi__biaya-antar::before {
+            content: 'Antar'
+        }
+
+        .transaksi__biaya-ekspres::before {
+            content: 'Ekspres (x 1 sub total)'
+        }
+
+        .transaksi__total-biaya {
+            color: var(--ion-color-primary-shade);
+            font-size: large;
+            margin-top: 0.5rem;
+
+            &::before {
+                content: 'Total biaya';
+            }
+        }
+    }
+
+    .chip-container {
+        margin-top: 1rem;
+    }
+}

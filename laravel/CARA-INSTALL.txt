@@ -1,0 +1,17 @@
+Pertama kali jalankan perintah berikut:
+1. composer i
+2. npm i
+3. Lihat PERHATIAN poin c
+4. npm run dev
+5. Konfigurasikan database terlebih dahulu pada file .env.
+6. php artisan migrate install
+7. php artisan migrate
+8. Lihat PERHATIAN poin a
+9. Lihat PERHATIAN poin b
+
+PERHATIAN
+a. File seed database ada pada database/seeds/DatabaseSeeder.php , bisa dikonfigurasi sendiri. Untuk melakukan seeding dapat dilakukan dengan perintah php artisan db:seed
+b. Password proteksi admin default: 3meudC3SEfMAurm
+   Letak password ada di config/app.php , property dengan nama proteksi_admin . Nilai property harus berupa password yang telah di-hash dengan menggunakan fungsi Illuminate\Support\Facades\Hash::make($password_yang_akan_di_hash) dengan $password_yang_akan_di_hash sendiri adalah password yang akan di-hash berupa string
+c. URL API telah ter-hardcoded pada file resources/js/app.js pada variabel bernama url (baris ke ~5)
+   Perlu diperhatikan bahwa setelah mengubah file yang ada di pada resources/js ataupun resources/sass, maka jalankan perintah npm run dev . Perintah ini digunakan untuk me-rebuild file js dan css yang digunakan dalam aplikasi. Dan setiap kali menjalankan perintah semacam npm run dev tersebut maka hendaknya force refresh pada browser sehingga browser menggunakan file js dan css terbaru, bukan yang dari cache. Shortcut force refresh pada Google Chrome adalah Shift + F5

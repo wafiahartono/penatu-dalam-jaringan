@@ -1,0 +1,191 @@
+.dt__actions > p {
+  display: inline;
+  margin: 0;
+}
+
+.dt__actions:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.dt__button-refresh {
+  margin-bottom: 1rem;
+}
+
+.dt__input-page {
+  width: 3rem;
+}
+
+.dt__input-search {
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.dt__message {
+  text-align: center;
+}
+
+.dt__row {
+  display: none;
+}
+
+.dt__table {
+  border: 1px solid;
+  box-sizing: border-box;
+  margin: 0 auto 1rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.dt__table table {
+  border: 1px solid;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.dt__table td,
+.dt__table th {
+  border: 1px solid;
+  padding: 0.125rem 0.25rem;
+}
+
+.dt__title {
+  margin: 0 0 1rem;
+}
+
+body {
+  margin: 0 auto;
+  width: 80vw;
+}
+
+#h3-api-otentikasi-status-token::before {
+  content: "Token: ";
+}
+
+#h3-notifikasi-pesanan::after {
+  content: ".";
+}
+
+#h3-notifikasi-pesanan::before {
+  content: "Notifikasi: ";
+}
+
+.form {
+  border: 1px solid black;
+  box-sizing: border-box;
+  margin: 0 auto 1rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.form > *:not(label),
+.form > label > * {
+  box-sizing: border-box;
+  margin: 0 0 0.5rem;
+  width: 100%;
+}
+
+.form > *:not(label):last-child {
+  margin-bottom: 0;
+}
+
+.form p {
+  margin: 0;
+}
+
+.buat-transaksi__paket::before {
+  content: "Paket: ";
+}
+
+.buat-transaksi__pesan::before {
+  content: "Pesan: ";
+}
+
+.buat-transaksi__total-biaya-container {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.buat-transaksi__total-biaya-container > * {
+  display: inline;
+}
+
+.detail-transaksi__id-transaksi {
+  text-align: left;
+}
+
+.detail-transaksi__id-transaksi::before {
+  content: "ID Transaksi #";
+}
+
+.detail-transaksi__row > * {
+  text-align: center;
+}
+
+.detail-transaksi__selesai::before {
+  content: "Transaksi selesai ";
+}
+
+.detail-transaksi__tanggal-pesan {
+  text-align: right;
+}
+
+.detail-transaksi__tanggal-pesan::before {
+  content: "Tanggal Pesan";
+  float: left;
+}
+
+.detail-transaksi table {
+  border: 1px solid;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.detail-transaksi table p {
+  margin: 0;
+}
+
+.detail-transaksi table td,
+.detail-transaksi table th {
+  border: 1px solid;
+  padding: 0.125rem 0.25rem;
+}
+
+.detail-transaksi table th {
+  background-color: #f5f5f5;
+}
+
+.mata-uang {
+  text-align: right;
+}
+
+.mata-uang::before {
+  content: "Rp";
+  float: left;
+}
+
+.pesan::before {
+  content: "Pesan: ";
+}
+
+.tac {
+  text-align: center;
+}
+
+.tal {
+  text-align: left;
+}
+
+.tar {
+  text-align: right;
+}
+
+#menu-container {
+  margin: 1rem 0;
+  display: flex;
+}
+
+#menu-container button:not(:first-child) {
+  margin-left: 0.25rem;
+}
+

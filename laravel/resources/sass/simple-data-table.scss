@@ -1,0 +1,56 @@
+.dt {
+    &__actions>p {
+        display: inline;
+        margin: 0;
+    }
+
+    &__actions:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+
+    &__button-refresh {
+        margin-bottom: 1rem;
+    }
+
+    &__input-page {
+        width: 3rem;
+    }
+
+    &__input-search {
+        box-sizing: border-box;
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+
+    &__message {
+        text-align: center;
+    }
+
+    &__row {
+        display: none;
+    }
+
+    &__table {
+        border: 1px solid;
+        box-sizing: border-box;
+        margin: 0 auto 1rem;
+        padding: 0.5rem;
+        width: 100%;
+    }
+
+    &__table table {
+        border: 1px solid;
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+
+    &__table td,
+    &__table th {
+        border: 1px solid;
+        padding: 0.125rem 0.25rem;
+    }
+
+    &__title {
+        margin: 0 0 1rem;
+    }
+}

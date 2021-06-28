@@ -1,0 +1,50 @@
+<ion-content class="ion-padding">
+  <ion-button class="back-button" color="dark" fill="clear" shape="round" routerLink="/home">
+    <ion-icon name="arrow-round-back" slot="icon-only"></ion-icon>
+  </ion-button>
+  <ion-card class="transaksi">
+    <div class="pesan" *ngIf="pesanan.detail.length === 0">Kamu belum menambahkan pesanan apa-apa</div>
+    <div>
+      <div class="detail-transaksi detail-transaksi--editable" *ngFor="let detail of pesanan.detail; let i = index">
+        <div>
+          <div>
+            <div class="detail-transaksi__id-paket">{{ detail.paketObject.id }}</div>
+            <div class="detail-transaksi__deskripsi-paket">{{ detail.paketObject.nama }} - {{ detail.paketObject.keterangan }}</div>
+          </div>
+          <ion-button color="medium" fill="outline" (click)="pilihJenisPaket(i)">
+            <ion-icon name="create" slot="icon-only"></ion-icon>
+          </ion-button>
+          <div class="detail-transaksi__jumlah-container">
+            <ion-button color="medium" fill="outline" (click)="ubahJumlah(i, false)">
+              <ion-icon name="remove" slot="icon-only"></ion-icon>
+            </ion-button>
+            <div class="detail-transaksi__jumlah">{{ detail.jumlah }}</div>
+            <ion-button color="medium" fill="outline" (click)="ubahJumlah(i, true)">
+              <ion-icon name="add" slot="icon-only"></ion-icon>
+            </ion-button>
+          </div>
+        </div>
+        <div class="detail-transaksi__harga">{{ detail.jenis ? 'Dry Clean' : 'Press' }} - Rp {{ mataUang(detail.paketObject[detail.jenis ? 'dry_clean' : 'press']) }} x {{ detail.jumlah }} = Rp {{ mataUang((detail.paketObject[detail.jenis ? 'dry_clean' : 'press']) * detail.jumlah) }}</div>
+      </div>
+    </div>
+    <div class="transaksi__biaya--detail">
+      <div class="transaksi__sub-total" *ngIf="pesanan.antar || pesanan.ekspres"><span>{{ mataUang(pesanan.totalBiaya / (pesanan.ekspres ? 2 : 1)) }}</span></div>
+      <div class="transaksi__biaya-antar" *ngIf="pesanan.antar"><span>-</span></div>
+      <div class="transaksi__biaya-ekspres" *ngIf="pesanan.ekspres"><span>{{ mataUang(pesanan.totalBiaya / 2) }}</span></div>
+      <div class="transaksi__total-biaya"><span>{{ mataUang(pesanan.totalBiaya) }}</span></div>
+    </div>
+    <div class="chip-container">
+      <ion-chip [color]="pesanan.antar ? 'primary' : ''" outline (click)="toggleAntar()">
+        <ion-label>Antar</ion-label>
+        <ion-icon [name]="pesanan.antar ? 'checkmark-circle' : 'radio-button-off'"></ion-icon>
+      </ion-chip>
+      <ion-chip [color]="pesanan.ekspres ? 'primary' : ''" outline (click)="toggleEkspres()">
+        <ion-label>Ekspres</ion-label>
+        <ion-icon [name]="pesanan.ekspres ? 'checkmark-circle' : 'radio-button-off'"></ion-icon>
+      </ion-chip>
+    </div>
+  </ion-card>
+  <ion-button expand="block" fill="outline" strong (click)="pilihPaket()">Tambah Pesanan</ion-button>
+  <ion-button expand="block" strong [disabled]="pesanan.detail.length === 0" (click)="pesanPesanan()">Pesan</ion-button>
+  <ion-spinner class="spinner-full-width" *ngIf="loading"></ion-spinner>
+</ion-content>
